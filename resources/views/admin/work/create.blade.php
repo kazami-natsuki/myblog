@@ -1,5 +1,5 @@
-{{-- layouts/admin.blade.phpを読み込む --}}
-@extends('layouts.admin')
+{{-- layouts/work.blade.phpを読み込む --}}
+@extends('layouts.work')
 
 
 {{-- admin.blade.phpの@yield('title')に'職務経歴作成画面'を埋め込む --}}
