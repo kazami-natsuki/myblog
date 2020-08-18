@@ -15,7 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function() {
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('work/create', 'Admin\WorkController@add');
     Route::get('work/edit', 'Admin\WorkController@edit');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
