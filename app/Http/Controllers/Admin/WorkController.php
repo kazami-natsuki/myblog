@@ -12,7 +12,7 @@ class WorkController extends Controller
         return view('admin.work.create');
     }
 
-    public function create()
+    public function create(Request $request)
     {
         return redirect('admin/work/create');
     }
