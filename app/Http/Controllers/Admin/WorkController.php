@@ -39,7 +39,7 @@ class WorkController extends Controller
       $work->fill($work_form);
       $work->save();
 
-        return redirect('admin/work/');
+        return redirect('admin/work');
     }
 
     public function index(Request $request)
@@ -71,7 +71,7 @@ class WorkController extends Controller
         // Validationをかける
         $this->validate($request, Work::$rules);
         // Work Modelからデータを取得する
-        $work = work::find($request->id);
+        $work = Work::find($request->id);
 
         // 送信されてきたフォームデータを格納する
         $work_form = $request->all();
@@ -90,4 +90,13 @@ class WorkController extends Controller
 
         return redirect('admin/work');
     }
+
+    public function delete(Request $request)
+    {
+        // 該当するNews Modelを取得
+        $work = Work::find($request->id);
+        // 削除する
+        $work->delete();
+        return redirect('admin/work');
+    }  
 }

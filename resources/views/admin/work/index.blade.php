@@ -33,7 +33,7 @@
                             <tr>
                                 <th width="10%">ID</th>
                                 <th width="20%">職歴・会社名</th>
-                                <th width="50%">詳細</th>
+                                <th width="30%">詳細</th>
                                 <th width="10%">操作</th>
                             </tr>
                         </thead>
@@ -41,11 +41,14 @@
                             @foreach($posts as $work)
                                 <tr>
                                     <th>{{ $work->id }}</th>
-                                    <td>{{ Str::limit($work->name, 100) }}</td>
-                                    <td>{{ Str::limit($work->description, 250) }}</td>
+                                    <td>{{ str_limit($work->name, 100) }}</td>
+                                    <td>{{ str_limit($work->description, 250) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\WorkController@edit', ['id' => $work->id]) }}">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\WorkController@delete', ['id' => $work->id]) }}">削除</a>
                                         </div>
                                     </td>
                                 </tr>

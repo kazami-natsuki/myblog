@@ -145,6 +145,8 @@ return [
     */
 
     'attributes' => [
+        'file' => '参考資料',
+        'description' => '詳細',
         'name' => '職歴・会社名',
     ],
 

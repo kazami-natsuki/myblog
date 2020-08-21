@@ -16,11 +16,12 @@ class CreateWorksTable extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name'); // 職歴・会社名を保存するカラム
-            $table->string('description');  // 詳細を保存するカラム
+            $table->string('description')->nullable();;  // 詳細を保存するカラム
             $table->string('file_path')->nullable();  // 参考資料を保存するカラム
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
