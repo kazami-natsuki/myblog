@@ -10,5 +10,6 @@ class Work extends Model
 
     public static $rules = array(
         'name' => 'required',
+        'description' => 'required',
     );
 }
