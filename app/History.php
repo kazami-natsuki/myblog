@@ -4,17 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Work extends Model
+class History extends Model
 {
     protected $guarded = array('id');
 
     public static $rules = array(
-        'name' => 'required',
+        'work_id' => 'required',
+        'edited_at' => 'required',
     );
-
-    public function histories()
-    {
-      return $this->hasMany('App\History');
-
-    }
 }
