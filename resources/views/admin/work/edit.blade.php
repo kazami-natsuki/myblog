@@ -17,13 +17,13 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="name">職歴・会社名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{ $work_form->name }}">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') ,$work_form->name }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="description">詳細</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="description" rows="20">{{ $work_form->description }}</textarea>
+                            <textarea class="form-control" name="description" rows="20">{{ old('description') ,$work_form->description }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
