@@ -24,12 +24,12 @@ class WorkController extends Controller
       $work_form = $request->all();
 
       // フォームから参考資料が送信されてきたら、保存して、$work->file_path に参考資料のパスを保存する
-      if (isset($work_form['file'])) {
-        $path = $request->file('file')->store('public/file');
+    if (isset($work_form['file'])) {
+        $path = $request->file('file')->store('file', 'public');
         $work->file_path = basename($path);
-      } else {
-          $work->file_path = null;
-      }
+    } else {
+        $work->file_path = null;
+    }
 
       // フォームから送信されてきた_tokenを削除する
       unset($work_form['_token']);
