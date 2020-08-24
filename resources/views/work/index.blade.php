@@ -10,7 +10,7 @@
                         <div class="col-md-6">
                             <div class="caption mx-auto">
                                 <div class="image">
-                                    @if ($headline->image_path)
+                                    @if ($headline->file_path)
                                         <a href="{{ asset('storage/file/' . $headline->file_path) }}">参考資料</a>
                                     @endif
                                 </div>
@@ -54,6 +54,5 @@
                 @endforeach
             </div>
         </div>
-    </div>
     </div>
 @endsection
